@@ -1,0 +1,1 @@
+In this project, we will be building a Firefox browser extension with a simple coin flip. 
