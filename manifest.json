@@ -1,10 +1,10 @@
 {
 
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "coinFlip",
   "version": "1.0",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Flip a coin.",
 
   "icons": {
     
@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
+      "js": ["coinFlip.js"]
     }
   ]
 
