@@ -27,6 +27,25 @@ function listenForClicks() {
           break;
        //TO DO: Logic for rolling a dice   
        case "Roll A Dice":
+         var randomNumber = Math.floor((Math.random() * 5) + 1);
+            if (randomNumber==1){
+              return browser.extension.getURL("images/dice1.png");
+            }
+             if (randomNumber==2){
+              return browser.extension.getURL("images/dice2.png");
+            }
+             if (randomNumber==3){
+              return browser.extension.getURL("images/dice3.png");
+            }
+             if (randomNumber==4){
+              return browser.extension.getURL("images/dice4.png");
+            }
+             if (randomNumber==5){
+              return browser.extension.getURL("images/dice5.png");
+            }
+            return browser.extension.getURL("images/tails6.png");
+            break;
+
 
       }
     }
