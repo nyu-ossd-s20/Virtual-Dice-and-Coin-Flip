@@ -14,7 +14,8 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/roll.png"
+    "default_icon": "icons/roll.png",
+    "default_popup": "popup/choose_game.html"
   
   },
 
