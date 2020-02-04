@@ -9,6 +9,14 @@
   "icons": {
     
   },
+"permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/roll.png"
+  
+  },
 
   "content_scripts": [
     {
