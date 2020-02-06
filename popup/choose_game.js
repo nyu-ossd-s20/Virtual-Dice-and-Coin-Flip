@@ -29,27 +29,43 @@ function listenForClicks() {
        case "Roll A Dice":
          var randomNumber = Math.floor((Math.random() * 6));
             if (randomNumber==1){
+              rollDice(1);
               return browser.extension.getURL("images/dice1.png");
             }
              if (randomNumber==2){
+              rollDice(2);
               return browser.extension.getURL("images/dice2.png");
             }
              if (randomNumber==3){
+              rollDice(3);
               return browser.extension.getURL("images/dice3.png");
             }
              if (randomNumber==4){
+              rollDice(4);
               return browser.extension.getURL("images/dice4.png");
             }
              if (randomNumber==5){
+              rollDice(5);
               return browser.extension.getURL("images/dice5.png");
             }
+            rollDice(6);
             return browser.extension.getURL("images/dice6.png");
             break;
-
-
       }
     }
+    
+    function rollDice(num) {
+        const dice = [...document.querySelectorAll(".die-list")];
+        dice.forEach(die => {
+            toggleClasses(die);
+            die.dataset.roll = num;
+        });
+    }
 
+    function toggleClasses(die) {
+        die.classList.toggle("odd-roll");
+        die.classList.toggle("even-roll");
+    }
     /**
      * Insert the page-hiding CSS into the active tab,
      * then get the game URL and
