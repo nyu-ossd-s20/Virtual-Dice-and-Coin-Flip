@@ -18,6 +18,14 @@ function listenForClicks() {
      */
     function gameNameToURL(gameName) {
       switch (gameName) {
+        case "Reset":
+          var x = document.getElementById("gameDisplayed");
+          
+            x.style.display = "none";
+  
+          break;
+
+
         case "Flip A Coin":
           var randomNumber = Math.floor((Math.random() * 2));
           if (randomNumber==0){
@@ -27,6 +35,11 @@ function listenForClicks() {
           break;
        //TO DO: Logic for rolling a dice   
        case "Roll A Dice":
+        //first display the dice 
+        var x = document.getElementById("gameDisplayed");
+         
+            x.style.display = "inline-block";
+          
          var randomNumber = Math.floor((Math.random() * 6));
             if (randomNumber==1){
               rollDice(1);
@@ -57,6 +70,11 @@ function listenForClicks() {
       }
     }
     
+
+
+
+
+
     function rollDice(num) {
         const dice = [...document.querySelectorAll(".die-list")];
         dice.forEach(die => {
