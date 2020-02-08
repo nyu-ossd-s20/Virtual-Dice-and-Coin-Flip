@@ -30,26 +30,29 @@ function listenForClicks() {
          var randomNumber = Math.floor((Math.random() * 6));
             if (randomNumber==1){
               rollDice(1);
-              return browser.extension.getURL("images/dice1.png");
+
+              //return browser.extension.getURL("images/dice1.png");
             }
              if (randomNumber==2){
               rollDice(2);
-              return browser.extension.getURL("images/dice2.png");
+              //return browser.extension.getURL("images/dice2.png");
             }
              if (randomNumber==3){
               rollDice(3);
-              return browser.extension.getURL("images/dice3.png");
+              //return browser.extension.getURL("images/dice3.png");
             }
              if (randomNumber==4){
               rollDice(4);
-              return browser.extension.getURL("images/dice4.png");
+              //return browser.extension.getURL("images/dice4.png");
             }
              if (randomNumber==5){
               rollDice(5);
-              return browser.extension.getURL("images/dice5.png");
+              //return browser.extension.getURL("images/dice5.png");
             }
-            rollDice(6);
-            return browser.extension.getURL("images/dice6.png");
+            if (randomNumber==6){
+              rollDice(6);
+            }
+            //return browser.extension.getURL("images/dice6.png");
             break;
       }
     }
@@ -67,18 +70,16 @@ function listenForClicks() {
         die.classList.toggle("even-roll");
     }
     /**
-     * Insert the page-hiding CSS into the active tab,
-     * then get the game URL and
+     * get the game URL and
      * send a "pick_game" message to the content script in the active tab.
      */
     function pick_game(tabs) {
-      browser.tabs.insertCSS({code: hidePage}).then(() => {
+      //browser.tabs.insertCSS({code: hidePage}).then(() => {
         let url = gameNameToURL(e.target.textContent);
         browser.tabs.sendMessage(tabs[0].id, {
           command: "pick_game",
           gameURL: url
         });
-      });
     }
 
     /**

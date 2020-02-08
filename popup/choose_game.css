@@ -1,5 +1,6 @@
 html, body {
-  width: 500px;
+  width: 600px;
+  height: 600px;
 }
 
 .hidden {
@@ -38,7 +39,7 @@ html, body {
   grid-template-rows: auto;
   justify-items: center;
   padding: 2rem;
-  perspective: 600px;
+  perspective: 800px;
 }
 .die-list {
   display: grid;
