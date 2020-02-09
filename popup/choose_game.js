@@ -13,34 +13,8 @@ const hidePage = `body > :not(.pick_game-image) {
 function listenForClicks() {
   document.addEventListener("click", (e) => {
 
-    /**
-     * Given the name of a game, get the URL to the corresponding image.
-     */
-    function gameNameToURL(gameName) {
-      switch (gameName) {
-        case "Reset":
-          var x = document.getElementById("gameDisplayed");
-          
-            x.style.display = "none";
-  
-          break;
-
-
-        case "Flip A Coin":
-          var randomNumber = Math.floor((Math.random() * 2));
-          if (randomNumber==0){
-            return browser.extension.getURL("images/heads.png");
-          }
-          return browser.extension.getURL("images/tails.png");
-          break;
-       //TO DO: Logic for rolling a dice   
-       case "Roll A Dice":
-        //first display the dice 
-        var x = document.getElementById("gameDisplayed");
-         
-            x.style.display = "inline-block";
-          
-         var randomNumber = Math.floor((Math.random() * 6));
+        // all of the dice roll execution
+        var randomNumber = Math.floor((Math.random() * 6));
             if (randomNumber==1){
               rollDice(1);
 
@@ -65,15 +39,29 @@ function listenForClicks() {
             if (randomNumber==6){
               rollDice(6);
             }
-            //return browser.extension.getURL("images/dice6.png");
-            break;
-      }
+
+          // all of the coin flip execution
+          var outcome = document.querySelector('.outcome');
+          
+          var randomNumber = getRandomNumber();
+          outcome.textContent = '';
+          outcome.classList.toggle('flip');
+          outcome.classList.add('toss');
+            
+            // Waits 3sec to display flip result
+          setTimeout(function() {
+            if (randomNumber == 1) {
+              outcome.textContent = 'heads';
+            } else if (randomNumber == 2) {
+              outcome.textContent = 'tails';
+            }
+            outcome.classList.remove('toss');
+          }, 800);
+              
+      
+    function getRandomNumber() {
+      return Math.floor(Math.random() * (2 - 1 + 1)) + 1
     }
-    
-
-
-
-
 
     function rollDice(num) {
         const dice = [...document.querySelectorAll(".die-list")];
