@@ -1,8 +1,8 @@
 html, body {
   width: 310px;
-  height: 530px;
+  height: 540px;
   overflow: hidden;
-  background-color: #2b2b2b;
+  background-color: #000000;
   justify-content: center;
   align-items: center;
 }
@@ -19,6 +19,7 @@ html, body {
   align-items: center;
   position: relative;
   border-style: double;
+
 }
 
 .die {
@@ -33,8 +34,18 @@ html, body {
 }
 
 .coin:hover, .die:hover {
-  background-color: #737070;
+  /*background-color: #737070;*/
   transition: 0.3s;
+}
+
+.die-item:hover {
+
+ border-color: rgba(206,150,251,1);
+  box-shadow: 0px 0px 5px 5px rgba(206,150,251,.3);
+}
+
+.die-item:hover > .dot {
+  background-color: rgba(206,150,251,1);
 }
 
 .die-list {
@@ -54,9 +65,13 @@ html, body {
   transition: transform 1.25s ease-out;
 }
 .die-item {
-  background-color: #fefefe;
-  box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  background-color: #000000;
+border: 2px solid;
+ border-color: rgba(121,255,254, 1);
+  box-shadow: 0px 0px 5px 5px rgba(121,255,254, .3);
+
+ /* box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
+    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);*/
   display: grid;
   grid-column: 1;
   grid-row: 1;
@@ -72,7 +87,7 @@ html, body {
 }
 .dot {
   align-self: center;
-  background-color: #676767;
+  background-color: rgba(121,255,254, 1);
   border-radius: 50%;
   box-shadow: inset -0.15rem 0.15rem 0.25rem rgba(0, 0, 0, 0.5);
   display: block;
@@ -80,6 +95,15 @@ html, body {
   justify-self: center;
   width: 1.25rem;
 }
+
+h3{
+  color:rgba(206,150,251,1) ;
+  text-align: center;
+
+
+
+}
+
 .even-roll[data-roll="1"] {
   transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
 }
@@ -199,10 +223,14 @@ html, body {
 }
 
 
+.outcome:hover {
+  color: rgba(206,150,251,1);
+}
+
 .outcome {
   height: 200px;
   width: 200px;
-  background-color: #fefefe;
+  background-color: #000000;
   box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
     inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   margin-top:20px;
@@ -222,8 +250,12 @@ html, body {
   letter-spacing: 3px;
   font-weight: bold;
   line-height: .8;
-  color: #222;
+  color: rgba(121,255,254, 1);
   box-shadow: 0 0 30px rgba(black, 1);
+text-shadow: 0 0 2px white;
+
+
+
   }
   .flip {
     transition: 1.25s;
@@ -261,7 +293,6 @@ html, body {
     border-radius: 50%;
   }
 }
-
 
 @keyframes toss {
   0% { top: 0px;}
