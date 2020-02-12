@@ -1,7 +1,9 @@
 ## Team 4, Virtual Dice and Coin Flip
 In this project, we built a basic Firefox extension where the user can flip a coin or roll a dice.
 
-##Installation
+
+
+## Installation
 Under the "Clone or Download" dropdown menu, click "Download ZIP" and extract it. Unzip the file. Then, enter about:debugging#/runtime/this-firefox in your URL bar. Press the "Load Temporary Add-on..." button, and select any file from the extension to load it into Firefox.
 
 ## Contributing
